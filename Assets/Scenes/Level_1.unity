@@ -215,7 +215,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: NoseCone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9142638885929767454, guid: 93eca7279256aba4193aec53eef4a090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2578892182961807578, guid: 93eca7279256aba4193aec53eef4a090,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2578892182961807578, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
+    - {fileID: 9142638885929767454, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
+    - {fileID: 2799522855813581583, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
+    - {fileID: 5489000229116499111, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
 --- !u!1 &1327836572 stripped
 GameObject:
@@ -251,6 +265,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6956ba6a0513740b99be4f9be3acd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1327836575
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327836572}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.17, y: 3.74, z: 1.16}
+  m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!1001 &5374390924972855793
 PrefabInstance:
   m_ObjectHideFlags: 0
