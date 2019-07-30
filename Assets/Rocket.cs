@@ -6,57 +6,58 @@ public class Rocket : MonoBehaviour
 {
 
     Rigidbody rigidBody;
+    AudioSource audioSource;
 
     private float rotation_const;
+    private bool audioRocketThrustPlaying = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rotation_const = 5;
+        rotation_const = 20;
 
         rigidBody = GetComponent<Rigidbody>();
         //rigidBody = GetComponent(typeof(Rigidbody)) as Rigidbody;
         //rigidBody = gameObject.GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ProcessInput();
+        ManageThrust();
+        ManageRotate();
     }
 
-    private void ProcessInput()
+    private void ManageThrust()
     {
-        if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.Space))
         {
             rigidBody.AddRelativeForce(new Vector3(0, 1, 0));
+            if(audioSource.isPlaying == false)
+            {
+                audioSource.Play();
+            }
+        }
+        else
+        {
+            audioSource.Stop();
+        }
+    }
+
+    private void ManageRotate()
+    {
+        rigidBody.freezeRotation = true;
+
+        if (Input.GetKey(KeyCode.A))
+        {
             transform.Rotate(rotation_const * Time.deltaTime * Vector3.forward);
-        }
-        else if (Input.GetKey(KeyCode.Space) && Input.GetKey(KeyCode.D))
-        {
-            rigidBody.AddRelativeForce(new Vector3(0, 1, 0));
-            transform.Rotate((-1) * rotation_const * Time.deltaTime * Vector3.forward);
-        }
-        else if(Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-        {
-            ;
-        }
-        else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.Space))
-        {
-            rigidBody.AddRelativeForce(new Vector3(0, 1, 0));
-        }
-        else if (Input.GetKey(KeyCode.Space))
-        {
-            rigidBody.AddRelativeForce(new Vector3(0, 1, 0));
-            //rigidBody.AddRelativeForce(Vector3.up);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(5 * Time.deltaTime * Vector3.forward);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate((-1) * 5 * Time.deltaTime * Vector3.forward);
-        }        
+            transform.Rotate((-1) * rotation_const * Time.deltaTime * Vector3.forward);
+        }
+
+        rigidBody.freezeRotation = false;
     }
 }
