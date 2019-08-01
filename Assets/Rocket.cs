@@ -8,13 +8,15 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody;
     AudioSource audioSource;
 
-    private float rotation_const;
+    [SerializeField] private float rotation_const;
+    [SerializeField] private float thrust_const;
     private bool audioRocketThrustPlaying = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        rotation_const = 20;
+        rotation_const = 250;
+        thrust_const = 40;
 
         rigidBody = GetComponent<Rigidbody>();
         //rigidBody = GetComponent(typeof(Rigidbody)) as Rigidbody;
@@ -29,11 +31,24 @@ public class Rocket : MonoBehaviour
         ManageRotate();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                print("OK");
+                break;
+            default:
+                print("Dead");
+                break;
+        }
+    }
+
     private void ManageThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            rigidBody.AddRelativeForce(new Vector3(0, 1, 0));
+            rigidBody.AddRelativeForce(new Vector3(0, thrust_const, 0));
             if(audioSource.isPlaying == false)
             {
                 audioSource.Play();
