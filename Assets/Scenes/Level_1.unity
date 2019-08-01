@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.4497947, g: 0.49985957, b: 0.57560444, a: 1}
+  m_IndirectSpecularColor: {r: 0.44856262, g: 0.4986145, b: 0.57565904, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -730,22 +730,22 @@ PrefabInstance:
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.23856728
+      value: 0.27646774
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.4086676
+      value: -0.5170268
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.29662776
+      value: 0.26166376
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.82951105
+      value: 0.7666688
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
@@ -755,17 +755,17 @@ PrefabInstance:
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 39.660004
+      value: 43.987003
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -44.174004
+      value: -64.258
       objectReference: {fileID: 0}
     - target: {fileID: 7588983755546731378, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 22.703001
+      value: 9.224
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bfa0189f85477b4fb3ebee4c4070cbb, type: 3}
