@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class Rocket : MonoBehaviour
     void Start()
     {
         rotation_const = 250;
-        thrust_const = 40;
+        thrust_const = 200;
 
         rigidBody = GetComponent<Rigidbody>();
         //rigidBody = GetComponent(typeof(Rigidbody)) as Rigidbody;
@@ -36,10 +35,12 @@ public class Rocket : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                print("OK");
+                break;
+            case "Landing":
+                SceneManager.LoadScene(1);
                 break;
             default:
-                print("Dead");
+                SceneManager.LoadScene(0);
                 break;
         }
     }
@@ -62,7 +63,7 @@ public class Rocket : MonoBehaviour
 
     private void ManageRotate()
     {
-        rigidBody.freezeRotation = true;
+        //rigidBody.freezeRotation = true;
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -73,6 +74,6 @@ public class Rocket : MonoBehaviour
             transform.Rotate((-1) * rotation_const * Time.deltaTime * Vector3.forward);
         }
 
-        rigidBody.freezeRotation = false;
+        //rigidBody.freezeRotation = false;
     }
 }
