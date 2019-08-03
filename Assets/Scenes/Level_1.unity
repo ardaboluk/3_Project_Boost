@@ -179,18 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1327836574, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
-      propertyPath: mainEngine
-      value: 
-      objectReference: {fileID: 8300000, guid: 7ebc55ac6f3108d42ac3fba0d68acb71, type: 3}
-    - target: {fileID: 1327836574, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
-      propertyPath: deathExplosion
-      value: 
-      objectReference: {fileID: 8300000, guid: 13c437f238025094ea1f19787dd8c5db, type: 3}
-    - target: {fileID: 1327836574, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
-      propertyPath: finishChingle
-      value: 
-      objectReference: {fileID: 8300000, guid: e9423702cf303eb438f42895d830c17e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93eca7279256aba4193aec53eef4a090, type: 3}
 --- !u!1 &1585756080
