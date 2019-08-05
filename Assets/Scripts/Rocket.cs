@@ -26,7 +26,7 @@ public class Rocket : MonoBehaviour
         state = State.Alive;
 
         rotation_const = 250;
-        thrust_const = 200;
+        thrust_const = 10000;
         sceneChangeDelayTime = 1.5f;
 
         rigidBody = GetComponent<Rigidbody>();
@@ -94,7 +94,7 @@ public class Rocket : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Space))
             {
-                rigidBody.AddRelativeForce(new Vector3(0, thrust_const, 0));
+                rigidBody.AddRelativeForce(new Vector3(0, thrust_const, 0) * Time.deltaTime);
                 thrustParticleSystem.Play();
                 if (audioSource.isPlaying == false)
                 {
