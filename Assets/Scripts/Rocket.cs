@@ -20,6 +20,9 @@ public class Rocket : MonoBehaviour
     [SerializeField] private float thrust_const;
     [SerializeField] private float sceneChangeDelayTime;
 
+    [SerializeField] public bool debug_toggleloadnextsceneonlkey;
+    [SerializeField] public bool debug_deathdisabled;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,9 @@ public class Rocket : MonoBehaviour
         //rigidBody = GetComponent(typeof(Rigidbody)) as Rigidbody;
         //rigidBody = gameObject.GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
+        debug_toggleloadnextsceneonlkey = true;
+        debug_deathdisabled = false;
     }
 
     // Update is called once per frame
@@ -40,6 +46,10 @@ public class Rocket : MonoBehaviour
     {
         ManageThrust();
         ManageRotation();
+        if (Debug.isDebugBuild)
+        {
+            ManageDebugKeys();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -54,7 +64,9 @@ public class Rocket : MonoBehaviour
                     StartFinishSequence();
                     break;
                 default:
-                    StartDeathSequence();
+                    if (debug_deathdisabled == false) {
+                        StartDeathSequence();
+                    }
                     break;
             }
         }
@@ -86,6 +98,20 @@ public class Rocket : MonoBehaviour
     private void LoadNextScene()
     {
         SceneManager.LoadScene(1);
+    }
+
+    private void ManageDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            if (debug_toggleloadnextsceneonlkey)
+            {
+                LoadNextScene();
+            }
+        }else if (Input.GetKeyDown(KeyCode.C))
+        {
+            debug_deathdisabled = !debug_deathdisabled;
+        }        
     }
 
     private void ManageThrust()
