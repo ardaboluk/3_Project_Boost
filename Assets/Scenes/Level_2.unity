@@ -280,6 +280,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5262778775451650766, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5262778775451650765, guid: 2bfa0189f85477b4fb3ebee4c4070cbb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -657,8 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aacf3c081a936b478b86fdee633681d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementVector: {x: 0, y: 0, z: 0}
-  movementPeriod: 0
+  movementVector: {x: 5, y: 0, z: 0}
+  movementPeriod: 2
 --- !u!1001 &7914476238631357030
 PrefabInstance:
   m_ObjectHideFlags: 0

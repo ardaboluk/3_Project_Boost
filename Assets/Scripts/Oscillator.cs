@@ -16,8 +16,8 @@ public class Oscillator : MonoBehaviour
     void Start()
     {
         startingPosition = gameObject.transform.position;
-        movementVector = new Vector3(5,0,0);
-        movementPeriod = 2.0f;
+        //movementVector = new Vector3(5,0,0);
+        //movementPeriod = 2.0f;
     }
 
     // Update is called once per frame
