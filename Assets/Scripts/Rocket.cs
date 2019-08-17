@@ -14,7 +14,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] private ParticleSystem finishParticleSystem;
     [SerializeField] private ParticleSystem deathParticleSystem;
 
-    public bool isAlive = true;
+    public bool isAlive;
 
     [SerializeField] private float rotation_const;
     [SerializeField] private float thrust_const;
